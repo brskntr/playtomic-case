@@ -36,7 +36,7 @@ public class WalletController {
     }
 
     @PostMapping("/create")
-    public WalletResource getWallet(@RequestBody WalletDto walletDto) {
+    public WalletResource createWallet(@RequestBody WalletDto walletDto) {
         WalletModel walletModel = walletMapper.map(walletDto);
         walletModel = walletService.create(walletModel);
         return walletMapper.mapToResource(walletModel);

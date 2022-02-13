@@ -54,7 +54,7 @@ public class WalletService extends BaseService {
             walletRepository.save(walletEntity);
             return walletMapper.map(walletEntity);
         } catch (StripeServiceException e) {
-            log.error("[topUpWallet] An exception occured",e);
+            log.error("[topUpWallet] An exception occurred", e);
             // throw exception controller advice will handle on controller layer to return clear message for end user
             throw e;
         }
